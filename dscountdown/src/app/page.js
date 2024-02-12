@@ -32,14 +32,14 @@ export default function Home() {
                 document.exitFullscreen();}
         }
     };
-
+    const fullScreen = !!document.fullscreenElement;
   return (
       <main className={styles.main}>
           <div className={styles.container}>
               <h1 className={styles.title}>Time until DS exam</h1>
               <br/>
               <div className={styles.countdown}>{countdown}</div>
-              <button className={styles.button} onClick={toggleFullScreen}>{document.fullscreenElement ? "Exit" : "Full Screen"}</button>
+              <button className={styles.button} onClick={toggleFullScreen}>{fullScreen ? "Exit" : "Full Screen"}</button>
           </div>
       </main>
   );

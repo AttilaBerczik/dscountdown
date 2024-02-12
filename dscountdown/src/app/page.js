@@ -24,13 +24,26 @@ export default function Home() {
     return () => clearInterval(intervalId); // Clean up on component unmount
   }, []);
 
+    const toggleFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+            document.getElementsByClassName(styles.button)[0].textContent = "Exit";
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+                document.getElementsByClassName(styles.button)[0].textContent = "Full Screen";
+            }
+        }
+    };
+
   return (
       <main className={styles.main}>
           <div className={styles.container}>
               <h1 className={styles.title}>Time until DS exam</h1>
               <br/>
               <div className={styles.countdown}>{countdown}</div>
+              <button className={styles.button} onClick={toggleFullScreen}>Full Screen</button>
           </div>
       </main>
-);
+  );
 }

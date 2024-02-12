@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
@@ -32,7 +32,10 @@ export default function Home() {
                 document.exitFullscreen();}
         }
     };
-    const fullScreen = !!document.fullscreenElement;
+    let fullScreen;
+    if (document && document.readyState === 'complete') {
+        fullScreen = !!document.fullscreenElement;
+    }
   return (
       <main className={styles.main}>
           <div className={styles.container}>

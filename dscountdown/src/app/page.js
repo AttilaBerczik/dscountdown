@@ -4,9 +4,11 @@ import styles from './page.module.css';
 
 
 export default function Home() {
-  const [countdown, setCountdown] = useState('');
+    const [countdown, setCountdown] = useState('');
+    const [fullScreen, setFullScreen] = useState(false);
 
-  useEffect(() => {
+
+    useEffect(() => {
     const targetDate = new Date('2024-02-19T09:00:00'); // Set your target date here
 
     const intervalId = setInterval(() => {
@@ -27,11 +29,11 @@ export default function Home() {
     const toggleFullScreen = () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
-            document.getElementsByClassName(styles.button)[0].textContent = "Exit";
+            setFullScreen(true);
         } else {
             if (document.exitFullscreen) {
                 document.exitFullscreen();
-                document.getElementsByClassName(styles.button)[0].textContent = "Full Screen";
+                setFullScreen(false);
             }
         }
     };
@@ -42,7 +44,7 @@ export default function Home() {
               <h1 className={styles.title}>Time until DS exam</h1>
               <br/>
               <div className={styles.countdown}>{countdown}</div>
-              <button className={styles.button} onClick={toggleFullScreen}>Full Screen</button>
+              <button className={styles.button} onClick={toggleFullScreen}>{document.fullscreenElement ? "Exit" : "Full Screen"}</button>
           </div>
       </main>
   );

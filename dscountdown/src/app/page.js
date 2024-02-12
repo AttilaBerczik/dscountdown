@@ -32,10 +32,12 @@ export default function Home() {
                 document.exitFullscreen();}
         }
     };
+
     let fullScreen;
-    if (document && document.readyState === 'complete') {
+    if ( typeof window !== "undefined" && document && document.readyState === 'complete') {
         fullScreen = !!document.fullscreenElement;
     }
+
   return (
       <main className={styles.main}>
           <div className={styles.container}>

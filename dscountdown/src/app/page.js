@@ -32,20 +32,16 @@ export default function Home() {
                 document.exitFullscreen();}
         }
     };
-
-    let fullScreen;
-    if ( typeof window !== "undefined" && document && document.readyState === 'complete') {
-        fullScreen = !!document.fullscreenElement;
-    }
-
-  return (
-      <main className={styles.main}>
-          <div className={styles.container}>
-              <h1 className={styles.title}>Time until DS exam</h1>
-              <br/>
-              <div className={styles.countdown}>{countdown}</div>
-              <button className={styles.button} onClick={toggleFullScreen}>{fullScreen ? "Exit" : "Full Screen"}</button>
-          </div>
-      </main>
-  );
+      return (
+          <main className={styles.main}>
+              <div className={styles.container}>
+                  <h1 className={styles.title}>Time until DS exam</h1>
+                  <br/>
+                  <div className={styles.countdown}>{countdown}</div>
+                  <button className={styles.button} onClick={toggleFullScreen}>
+                      {typeof window !== "undefined"  && document.fullscreenElement ? "Exit" : "Full Screen"}
+                  </button>
+              </div>
+          </main>
+      );
 }

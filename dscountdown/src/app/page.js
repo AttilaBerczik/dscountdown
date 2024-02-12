@@ -44,7 +44,7 @@ export default function Home() {
               <h1 className={styles.title}>Time until DS exam</h1>
               <br/>
               <div className={styles.countdown}>{countdown}</div>
-              <button className={styles.button} onClick={toggleFullScreen}>{document.fullscreenElement ? "Exit" : "Full Screen"}</button>
+              <button className={styles.button} onClick={toggleFullScreen}>{document && document.fullscreenElement ? "Exit" : "Full Screen"}</button>
           </div>
       </main>
   );

@@ -7,7 +7,7 @@ export default function Home() {
     const [countdown, setCountdown] = useState('');
 
     useEffect(() => {
-    const targetDate = new Date('2024-02-19T09:00:00'); // Set your target date here
+    const targetDate = new Date('2024-02-20T15:00:00'); // Set your target date here
 
     const intervalId = setInterval(() => {
       const now = new Date();
@@ -35,7 +35,7 @@ export default function Home() {
       return (
           <main className={styles.main}>
               <div className={styles.container}>
-                  <h1 className={styles.title}>Time until DS exam</h1>
+                  <h1 className={styles.title}>Time until Informatik exam</h1>
                   <br/>
                   <div className={styles.countdown}>{countdown}</div>
                   <button className={styles.button} onClick={toggleFullScreen}>

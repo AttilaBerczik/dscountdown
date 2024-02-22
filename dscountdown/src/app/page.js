@@ -35,7 +35,7 @@ export default function Home() {
       return (
           <main className={styles.main}>
               <div className={styles.container}>
-                  <h1 className={styles.title}>Time until Informatik exam</h1>
+                  <h1 className={styles.title}>Time until CA exam</h1>
                   <br/>
                   <div className={styles.countdown}>{countdown}</div>
                   <button className={styles.button} onClick={toggleFullScreen}>

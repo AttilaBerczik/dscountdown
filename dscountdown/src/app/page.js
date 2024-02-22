@@ -7,7 +7,7 @@ export default function Home() {
     const [countdown, setCountdown] = useState('');
 
     useEffect(() => {
-    const targetDate = new Date('2024-02-20T15:30:00'); // Set your target date here
+    const targetDate = new Date('2024-02-26T14:00:00'); // Set your target date here
 
     const intervalId = setInterval(() => {
       const now = new Date();

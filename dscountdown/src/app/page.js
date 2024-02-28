@@ -7,7 +7,7 @@ export default function Home() {
     const [countdown, setCountdown] = useState('');
 
     useEffect(() => {
-    const targetDate = new Date('2024-02-26T14:00:00'); // Set your target date here
+    const targetDate = new Date('2024-04-15T09:00:00'); // Set your target date here
 
     const intervalId = setInterval(() => {
       const now = new Date();
@@ -29,13 +29,14 @@ export default function Home() {
             document.documentElement.requestFullscreen();
         } else {
             if (document.exitFullscreen) {
-                document.exitFullscreen();}
+                document.exitFullscreen();
+            }
         }
     };
       return (
           <main className={styles.main}>
               <div className={styles.container}>
-                  <h1 className={styles.title}>Time until CA exam</h1>
+                  <h1 className={styles.title}>Well done with the exams, enjoy your holiday!</h1>
                   <br/>
                   <div className={styles.countdown}>{countdown}</div>
                   {typeof window !== "undefined"  && !document.fullscreenElement && (

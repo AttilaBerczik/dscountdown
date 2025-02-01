@@ -1,3 +1,3 @@
 You can see the live website here:
 
-https://dscountdown.vercel.app/
+https://bie-countdown.vercel.app/
